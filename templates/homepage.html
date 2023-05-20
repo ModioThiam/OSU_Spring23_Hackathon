@@ -1,72 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="homepage.js"></script>
-    <title>(TITLE A)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <title>HB Recipe Generator</title>
 </head>
-<header class="banner">
-    <div class="banner-text">
-        <h1>Title (A)</h1>
-    </div>
-</header>
 
 <body>
-</body>
-<section class="description">
-    <div class="description">
-        <h2> Welcome to A, your ultimate culinary tool! </h2>
-        <p>Are you tired of staring at a pantry or fridge full of ingredients and feeling clueless about what to cook?
-            Look no further! Our innovative website application is here to improve your cooking experience.</p>
-        <p>With (A), all you need to do is input a list of ingredients from your pantry or fridge, and let our
-            application work its magic. This application will analyze your ingredients and generate mouthwatering
-            recipes tailored specifically to your available resources.</p>
-        <p>No more wasting time searching through endless recipe websites or struggling to come up with ideas. Our
-            application effortlessly combines convenience and creativity, providing you with a personalized selection of
-            recipes that make the most of what you already have. From simple and quick meals to gourmet delights, our
-            recipes cover a wide range of cuisines and dietary preferences.</p>
-    </div>
-</section>
 
+    <section class="home">
+        <div class="max-width">
+            <div class="text-1">
+                <h1>Healthy Bytes Recipe Generator</h1>
+            </div>
+        </div>
+        </div>
+    </section>
 
-<div class="container">
-    <div class="wrapper">
-        <img src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/718742/pexels-photo-718742.jpeg?auto=compress&cs=tinysrgb&w=600">
-        <img src="https://images.pexels.com/photos/1256875/pexels-photo-1256875.jpeg?auto=compress&cs=tinysrgb&w=600">
-    </div>
-</div>
+    <section class="about">
+        <h2 class="title">Welcome to Healthy Bytes Recipe Generator</h2>
+        <div class="max-width">
+            <div class="about-content">
+                <div class="text-2">
+                    Are you tired of staring at a pantry or fridge full of ingredients and feeling clueless about
+                    what to
+                    cook?
+                    Look no further! Our innovative website application is here to improve your cooking experience.<br>
+                    <br>With this Recipe Generator, all you need to do is input a list of ingredients from your pantry
+                    or fridge, and let
+                    our
+                    application work its magic. This application will analyze your ingredients and generate
+                    mouthwatering
+                    recipes tailored specifically to your available resources.
+                    No more wasting time searching through endless recipe websites or struggling to come up with
+                    ideas.<br>
+                    <br>Our application effortlessly combines convenience and creativity, providing you with a
+                    personalized
+                    selection of recipes that make the most of what you already have. From simple and quick meals to
+                    gourmet delights, our
+                    recipes cover a wide range of cuisines and dietary preferences.
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="input">
-    <h2>Let's Get Started!</h2>
-    <p>Enter the ingredients from your pantry or fridge (comma-separated):</p>
-    <div>
-        <input type="text" id="ingredients" placeholder="Enter ingredients" style="width: 900px; height:50px">
-    </div>
-    <div style="margin-top: 10px;"><button>Generate Recipes</button></div>
-    <div id="recipe_results"></div>
-</section>
+    <section class="action-1">
+        <div class="max-width">
+            <div class="text-3">Let's Get Started!</div>
+            <p>Enter the ingredients from your pantry or fridge (comma-separated):</p>
+            <form action="/recipe" method="POST">
+                <textarea name="ingredients" id="ingredients" placeholder="Enter Ingredients"></textarea>
+                <button class="button" type="submit">Generate Recipes</button>
+            </form>
+        </div>
+    </section>
 
-<section class="contact-us">
-    <div class="contact-us">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <section class="choices">
+        <div class="max-width">
+            <div class="generated">
+                <div class="text-4">Generated Results</div>
+                <div class="results-1">
+                    <div class="recipe-1">
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" required>
+                    </div>
+                    <div class="recipe-2">
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <div class="recipe-3">
 
-            <button type="submit">Submit</button>
-        </form>
-    </div>
-</section>
+                    </div>
+                </div>
+            </div>
+            <div class="selected">
+                <div class="text-5">Selected Recipes</div>
+                <div class="results-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="max-width">
+            <div class="logo">
+                <img src="visuals/logo.png">
+            </div>
+            <div class="right">
+                <div class="contact-form">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

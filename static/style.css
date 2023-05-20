@@ -1,116 +1,243 @@
-.banner {
-    background-color: #40916c;
-    padding: 20px;
-}
-
-.banner-text {
-    text-align: left;
-}
-
-.banner-text h1 {
-    color: #fff;
-    font-size: 36px;
+* {
     margin: 0;
-    font-weight: bold;
-}
-
-h1 {
-    color: #40916c;
-    font-size: 36px;
-}
-
-h2 {
-    color: #40916c;
-    font-size: 30px;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: #b7e4c7;
+    font-family: 'Roboto Mono', monospace;
+    background: #CAF0F8;
 }
 
-.container {
-    width: 60vmin;
-    height: 40vmin;
-    margin: 0 auto;
-    border: 20px solid #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+/*home section*/
+
+.home {
     display: flex;
-    justify-content: center;
+    background: url(visuals/img1.jpg) no-repeat center;
+    background-size: cover;
+    height: 100vh;
+    color: whitesmoke;
+    min-height: 500px;
+}
+
+.home .text-1 {
+    border: solid 3px white;
+    box-shadow: 0 0 10px #00B4D8;
+    padding: 3px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    text-shadow: #00B4D8 1px 0 10px;
+}
+
+section {
+    padding: 20px 0;
+}
+
+/*about section*/
+
+.about .about-content {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: 20px;
+    justify-content: space-between;
 }
 
-.wrapper {
-    width: 100%;
-    display: flex;
-    animation: slide 30s infinite;
-}
-
-.wrapper img {
-    width: 70vmin;
-    height: 40vmin;
-    object-fit: contain;
-
-}
-
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-300%);
-    }
-}
-
-section.input button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #40916c;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.about .title {
+    color: #03045E;
+    position: relative;
     text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
+}
+
+.about .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 400px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+.about .title::after {
+    content: "your ultimate culinary tool";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: #03045E;
+    padding: 5px;
+    background: #CAF0F8;
+    transform: translateX(-50%);
+}
+
+.about .about-content .text-2 {
+    margin-top: 20px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.action-1 p {
+    margin-bottom: 10px;
+}
+
+.action-1 .button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #03045E;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    margin-top: 10px;
+    width: 25%;
+}
+
+.action1 .button:hover {
+    color: #03045E;
+    background: whitesmoke;
+    border: #03045E;
+    box-shadow: 0 0 10px #03045E;
+}
+
+/*input field*/
+
+#ingredients {
+    display: flex;
+    width: 900px;
+    height: 50px;
+    background: rgb(236, 236, 236);
+    border: 1px solid #000;
+    padding: 10px;
+    font-size: 18px;
 }
 
 #ingredients::placeholder {
-    font-size: 16px;
+    color: gray;
 }
 
-section.contact-us {
-    background-color: #d8f3dc;
-    padding: 50px;
-    margin: 0 auto;
-    max-width: 600px;
+/*choices*/
+
+.choices .max-width {
+    display: flex;
+}
+
+.generated,
+.selected {
+    flex: 1;
+    margin-right: 10px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-section.contact-us label {
+.action-1 .text-3,
+.generated .text-4,
+.selected .text-5 {
+    color: #03045E;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.generated .text-4,
+.selected .text-5 {
+    padding-top: 10px;
+}
+
+.generated .results-1,
+.selected .results-2 {
+    display: flex;
+    height: 500px;
+    border-top: 1px solid #000;
+    width: 100%;
+    background: rgb(236, 236, 236);
+}
+
+
+/*contact*/
+
+.contact .max-width{
+    display: flex;
+}
+
+.contact .logo {
+    padding-top: 50px;
+    flex: 1;
+    width: 45%;
+}
+
+.contact .logo img{
+    height: 350px;
+    width: 500px;
+    object-fit: fill;
+    border-radius: 6px;
+}
+
+.contact .right{
+    width: 55%;
+}
+.contact .right .contact-form {
+    margin-top: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
     display: block;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-section.contact-us input,
-section.contact-us textarea {
-    display: block;
-    width: 400px;
+.form-group input,
+.form-group textarea {
+    width: 100%;
     padding: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-section.contact-us button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #40916c;
-    color: #fff;
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #03045E;
+    color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    text-align: center;
+    transition: all 0.1s ease;
+}
+
+button[type="submit"]:hover {
+    color: #03045E;
+    background: whitesmoke;
+    border: #03045E;
+    box-shadow: 0 0 10px #03045E;
 }
