@@ -4,18 +4,22 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import openai
 
-#openai.organization = ""
-#openai.api_key = ""
-#openai.Model.list()
+# openai.organization = ""
+# openai.api_key = ""
+# openai.Model.list()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
+
+# Initialize the database
 db = SQLAlchemy(app)
+
 
 @app.route('/')
 def index():
     return render_template('homepage.html')
 
-if __name__ == "__main__":
-    #port = int(os.environ.get('PORT', 13132))
+
+if __name__ == '__main__':
+    # port = int(os.environ.get('PORT', 13132))
     app.run(debug=True)
