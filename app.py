@@ -15,7 +15,10 @@ openai.api_key = os.getenv("API_KEY")
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
+
+# Initialize the database
 db = SQLAlchemy(app)
+
 
 @app.route('/recipe', methods=['POST', 'GET'])
 def homepage():
@@ -54,6 +57,8 @@ def homepage():
     
         return render_template('apitest.html', recipeName=recipeName, ingredients=ingredients, instructions=instructions)
 
-if __name__ == "__main__":
-    #port = int(os.environ.get('PORT', 13132))
+
+
+if __name__ == '__main__':
+    # port = int(os.environ.get('PORT', 13132))
     app.run(debug=True)
