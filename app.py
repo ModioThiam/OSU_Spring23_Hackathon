@@ -1,12 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request
-from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 import openai
 from dotenv import load_dotenv
 load_dotenv() #take environment variables from .env
 import os
-
+import json
 
 
 #openai.organization = ""
@@ -15,9 +14,12 @@ openai.api_key = os.getenv("API_KEY")
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
+
+# Initialize the database
 db = SQLAlchemy(app)
 
-@app.route('/recipe', methods=['POST', 'GET'])
+
+@app.route('/', methods=['POST', 'GET'])
 def homepage():
     if request.method == "GET":
         return render_template('homepage.html')
@@ -26,23 +28,24 @@ def homepage():
         user_input = request.form["ingredients"]
 
         prompt = """
-        Give me a popular recipe represented as a Python dictionary object that includes 3 or less similar ingredients
-        of these ingredients: """ + user_input + """ Give me only the Python object. Your output must always be in valid Python dicionary format.
-        Example:
-        {
-            "recipeName": <Put recipe name here>,
-            "ingredients": <List ingredients here>,
-            "instructions": <List instructions here>
-        
-        }
+        tell me a joke
+        # Give me a popular recipe represented as a JSON object that includes 3 or less similar ingredients of these
+        # ingredients: """ + user_input + """ Give me only the json object. Your output must always be in valid JSON format. I only want the object, do not talk to me.
+        # Example:
+        # {
+        #     "recipeName": <Put recipe name here>,
+        #     "ingredients": <List ingredients here>,
+        #     "instructions": <List instructions here>
+
+        # }
         """
 
         response = openai.Completion.create(
         engine="text-davinci-002",
         prompt=prompt,
         temperature=0.5,
-        max_tokens=60,
-        top_p=1,
+        max_tokens=1000,
+        top_p=0,
         frequency_penalty=0
         )
 
@@ -51,9 +54,13 @@ def homepage():
         recipeName = res["recipeName"]
         ingredients = res["ingredients"]
         instructions = res["instructions"]    
+
+        print(recipeName)
     
         return render_template('apitest.html', recipeName=recipeName, ingredients=ingredients, instructions=instructions)
 
-if __name__ == "__main__":
-    #port = int(os.environ.get('PORT', 13132))
+
+
+if __name__ == '__main__':
+    # port = int(os.environ.get('PORT', 13132))
     app.run(debug=True)
