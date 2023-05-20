@@ -3,9 +3,14 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 import openai
+from dotenv import load_dotenv
+load_dotenv() #take environment variables from .env
+import os
+
+
 
 #openai.organization = ""
-#openai.api_key = ""
+openai.api_key = os.getenv("API_KEY")
 #openai.Model.list()
 
 app = Flask(__name__)
