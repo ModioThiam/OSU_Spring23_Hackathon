@@ -1,12 +1,11 @@
 from flask import Flask, render_template, redirect, url_for, request
-from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 import openai
 from dotenv import load_dotenv
 load_dotenv() #take environment variables from .env
 import os
-
+import json
 
 
 #openai.organization = ""
