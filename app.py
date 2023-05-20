@@ -19,7 +19,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
 db = SQLAlchemy(app)
 
 
-@app.route('/recipe', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def homepage():
     if request.method == "GET":
         return render_template('homepage.html')
