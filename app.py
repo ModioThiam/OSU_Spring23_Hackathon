@@ -3,10 +3,15 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os
 import openai
+from dotenv import load_dotenv
+load_dotenv() #take environment variables from .env
+import os
 
-# openai.organization = ""
-# openai.api_key = ""
-# openai.Model.list()
+
+
+#openai.organization = ""
+openai.api_key = os.getenv("API_KEY")
+#openai.Model.list()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.db'
