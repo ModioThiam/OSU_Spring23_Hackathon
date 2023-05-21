@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
+from flask import jsonify
 import os
 import openai
 from dotenv import load_dotenv
@@ -53,11 +54,17 @@ def homepage():
         res = json.loads(response)
         recipeName = res["recipeName"]
         ingredients = res["ingredients"]
-        instructions = res["instructions"]    
+        instructions = res["instructions"]
 
-        print(recipeName)
-    
-        return render_template('apitest.html', recipeName=recipeName, ingredients=ingredients, instructions=instructions)
+        recipe_info = {
+            "recipeName": recipeName,
+            "ingredients": ingredients,
+            "instructions": instructions
+        }
+
+        print (recipe_info)
+
+        return jsonify(recipe_info)
 
 
 
