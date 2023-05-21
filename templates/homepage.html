@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="{{url_for('static', filename='script/script.js')}}"></script>
     <title>HB Recipe Generator</title>
 </head>
 
@@ -56,7 +57,7 @@
             <p>Enter the ingredients from your pantry or fridge (comma-separated):</p>
             <form action="/" method="POST">
                 <textarea name="ingredients" id="ingredients" placeholder="Enter Ingredients"></textarea>
-                <button class="button" type="submit">Generate Recipes</button>
+                <button type="button" id="generate" onclick="showRecipes()">Generate Recipes</button>
             </form>
         </div>
     </section>
@@ -66,14 +67,54 @@
             <div class="generated">
                 <div class="text-4">Generated Results</div>
                 <div class="results-1">
-                    <div class="recipe-1">
-
+                    <div id="rec-1" onclick="togglePopup_1()">
+                        <h2 class="recipe-1-title">Recipe Name</h2>
+                        <div class="time-cook-1">Cook Time</div>
+                        <div class="popup" id="popup-1">
+                            <div class="overlay"></div>
+                            <div class="content">
+                                <div class="close-btn">&times;</div>
+                                <h1>Recipe Name</h1>
+                                <h2>Ingredients:</h2>
+                                <ul id="ingredientsList"></ul>
+                                <h3>Instructions:</h3>
+                                <ul id="instructionsList"></ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="recipe-2">
-
+                    <div id="rec-2" onclick="togglePopup_2()">
+                        <h2 class="recipe-2-title">Recipe Name</h2>
+                        <div class="time-cook-2">Cook Time</div>
+                        <div class="popup" id="popup-2">
+                            <div class="overlay"></div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="close-btn">&times;</div>
+                                    <h1>Recipe Name</h1>
+                                    <h2>Ingredients:</h2>
+                                    <ul id="ingredientsList"></ul>
+                                    <h3>Instructions:</h3>
+                                    <ul id="instructionsList"></ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="recipe-3">
-
+                    <div id="rec-3" onclick="togglePopup_3()">
+                        <h2 class="recipe-3-title">Recipe Name</h2>
+                        <div class="time-cook-3">Cook Time</div>
+                        <div class="popup" id="popup-3">
+                            <div class="overlay"></div>
+                            <div class="content">
+                                <div class="content">
+                                    <div class="close-btn">&times;</div>
+                                    <h1>Recipe Name</h1>
+                                    <h2>Ingredients:</h2>
+                                    <ul id="ingredientsList"></ul>
+                                    <h3>Instructions:</h3>
+                                    <ul id="instructionsList"></ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
