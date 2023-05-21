@@ -1,5 +1,4 @@
 # OSU_Spring23_Hackathon
-# OSU_Spring23_Hackathon
 
 =======================================
 Healthy Bites Reciper Generator
