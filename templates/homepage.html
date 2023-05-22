@@ -56,7 +56,7 @@
             <p>Enter the ingredients from your pantry or fridge (comma-separated):</p>
             <form action="/" method="POST">
                 <textarea name="ingredients" id="ingredients" placeholder="Enter Ingredients"></textarea>
-                <button class="button" type="submit">Generate Recipes</button>
+                <button type="submit" id="generate">Generate Recipe</button>
             </form>
         </div>
     </section>
@@ -64,22 +64,22 @@
     <section class="choices">
         <div class="max-width">
             <div class="generated">
-                <div class="text-4">Generated Results</div>
+                <div class="text-4">Generated Result</div>
                 <div class="results-1">
-                    <div class="recipe-1">
-
-                    </div>
-                    <div class="recipe-2">
-
-                    </div>
-                    <div class="recipe-3">
-
-                    </div>
+                    <h2 class="recipe-name">{{ recipeName }}</h2>
+                    <h2>{{ ingredientTitle }}</h2>
+                    <ul id="ingredientList">
+                        {% for element in ingredients %}
+                        <li>{{ element }}</li>
+                        {% endfor %}
+                    </ul>
+                    <h2>{{ instructionTitle }}</h2>
+                    <ul id="instructionList">
+                        {% for element in instructions %}
+                        <li>{{ element }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            </div>
-            <div class="selected">
-                <div class="text-5">Selected Recipes</div>
-                <div class="results-2"></div>
             </div>
         </div>
     </section>
