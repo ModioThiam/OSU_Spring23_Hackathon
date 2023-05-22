@@ -93,7 +93,7 @@ section {
     margin-bottom: 10px;
 }
 
-.action-1 .button {
+#generate {
     display: block;
     width: 100%;
     padding: 10px;
@@ -107,7 +107,7 @@ section {
     width: 25%;
 }
 
-.action1 .button:hover {
+#generate:hover {
     color: #03045E;
     background: whitesmoke;
     border: #03045E;
@@ -136,10 +136,8 @@ section {
     display: flex;
 }
 
-.generated,
-.selected {
+.generated {
     flex: 1;
-    margin-right: 10px;
     border: 1px solid #000;
     display: flex;
     flex-direction: column;
@@ -148,8 +146,7 @@ section {
 }
 
 .action-1 .text-3,
-.generated .text-4,
-.selected .text-5 {
+.generated .text-4 {
     color: #03045E;
     font-size: 20px;
     letter-spacing: 3px;
@@ -157,20 +154,39 @@ section {
     font-weight: bold;
 }
 
-.generated .text-4,
-.selected .text-5 {
+.generated .text-4 {
     padding-top: 10px;
 }
 
-.generated .results-1,
-.selected .results-2 {
+.generated .results-1 {
     display: flex;
     height: 500px;
     border-top: 1px solid #000;
     width: 100%;
     background: rgb(236, 236, 236);
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    overflow: scroll;
 }
 
+.generated .results-1 h2 {
+    margin-left: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.results-1 .recipe-name{
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-decoration: underline;
+}
+
+#ingredientList,
+#instructionList {
+    margin-left: 15%;
+}
 
 /*contact*/
 
